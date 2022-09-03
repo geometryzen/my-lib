@@ -1,7 +1,3 @@
-export function hello(name: string): void {
-    console.log(`Hello, ${name}`);
-}
-
 /**
  * Constructs a personalized string that can be used to greet a person.
  * @param name The name of the person receiving the greeting.

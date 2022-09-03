@@ -12,10 +12,12 @@
     },
     "scripts": {
         "build": "rollup -c",
+        "lint": "eslint . --ext .ts",
         "test": "mocha 'tests/**/*.spec.ts'",
         "coverage": "nyc mocha 'tests/**/*.spec.ts'",
         "docs": "npm run docs:typedoc && open-cli docs/index.html",
-        "docs:typedoc": "trash docs && typedoc --options typedoc.json"
+        "docs:typedoc": "trash docs && typedoc --options typedoc.json",
+        "pages": "npm run docs:typedoc && gh-pages -d docs"
     },
     "repository": {
         "type": "git",
@@ -34,7 +36,11 @@
         "@rollup/plugin-typescript": "^8.4.0",
         "@types/chai": "^4.3.3",
         "@types/mocha": "^9.1.1",
+        "@typescript-eslint/eslint-plugin": "^5.36.1",
+        "@typescript-eslint/parser": "^5.36.1",
         "chai": "^4.3.6",
+        "eslint": "^8.23.0",
+        "gh-pages": "^4.0.0",
         "mocha": "^10.0.0",
         "nyc": "^15.1.0",
         "open-cli": "^7.0.1",
