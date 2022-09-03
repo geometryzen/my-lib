@@ -17,13 +17,13 @@ export default [
                 file: packageJson.browser,
                 format: 'umd',
                 sourcemap: true,
-                name: "stemcstudioMechanicsJsxGraph",
+                name: "MYLIB",
             },
             {
                 file: packageJson.main,
                 format: 'cjs',
                 sourcemap: true,
-                name: 'stemcstudioMechanicsJsxGraph'
+                name: 'MYLIB'
             },
             {
                 file: packageJson.module,
