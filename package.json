@@ -13,7 +13,9 @@
     "scripts": {
         "build": "rollup -c",
         "test": "mocha 'tests/**/*.spec.ts'",
-        "coverage": "nyc mocha 'tests/**/*.spec.ts'"
+        "coverage": "nyc mocha 'tests/**/*.spec.ts'",
+        "docs": "npm run docs:typedoc && open-cli docs/index.html",
+        "docs:typedoc": "trash docs && typedoc --options typedoc.json"
     },
     "repository": {
         "type": "git",
@@ -35,10 +37,13 @@
         "chai": "^4.3.6",
         "mocha": "^10.0.0",
         "nyc": "^15.1.0",
+        "open-cli": "^7.0.1",
         "rollup-plugin-dts": "^4.2.2",
         "rollup-plugin-peer-deps-external": "^2.2.4",
         "rollup-plugin-terser": "^7.0.2",
+        "trash": "^8.1.0",
         "ts-node": "^10.9.1",
+        "typedoc": "^0.23.14",
         "typescript": "^4.8.2"
     }
 }

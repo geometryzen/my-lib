@@ -1,7 +1,15 @@
+.nyc_output/
+coverage/
+docs/
 src/
+tests/
 types/
+.mocharc.json
+.nycrc.json
+register.js
 rollup.config.js
 tsconfig.json
+typedoc.json
 dist/cjs/index.d.ts
 dist/esm/index.d.ts
 dist/system/index.d.ts
