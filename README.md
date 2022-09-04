@@ -1,8 +1,8 @@
 # my-lib
 
-[![version](https://img.shields.io/npm/v/@stemcstudio/my-lib.svg)](https://www.npmjs.com/package/@stemcstudio/my-lib) 
+[![version](https://img.shields.io/npm/v/@geometryzen/my-lib.svg)](https://www.npmjs.com/package/@geometryzen/my-lib) 
 
-[![npm downloads](https://img.shields.io/npm/dm/@stemcstudio/my-lib.svg)](https://npm-stat.com/charts.html?package=@stemcstudio/my-lib&from=2022-01-01)
+[![npm downloads](https://img.shields.io/npm/dm/@geometryzen/my-lib.svg)](https://npm-stat.com/charts.html?package=@geometryzen/my-lib&from=2022-09-01)
 
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](./CODE_OF_CONDUCT.md)
 
