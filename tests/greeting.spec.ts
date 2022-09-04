@@ -1,8 +1,5 @@
-// import { describe, expect, test } from '@jest/globals';
 import { greeting } from "../src/index";
 
-describe("greeting", function () {
-    test("greeting", function () {
-        expect(greeting("World")).toBe("Hello, World!");
-    });
+test("greeting the World", function () {
+    expect(greeting("World")).toBe("Hello, World!");
 });
