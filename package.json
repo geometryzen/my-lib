@@ -12,7 +12,7 @@
     },
     "scripts": {
         "build": "rollup -c",
-        "clean": "trash .nyc_output && trash coverage && trash dist && trash docs && trash types && trash node_modules",
+        "clean": "trash coverage && trash dist && trash docs && trash types && trash node_modules",
         "coverage": "npm run test -- --coverage",
         "dev": "rollup -c -w",
         "docs": "npm run docs:typedoc && open-cli docs/index.html",
