@@ -1,7 +1,7 @@
 {
     "name": "@stemcstudio/my-lib",
     "version": "2.0.0",
-    "description": "STEMCstudio My Library",
+    "description": "My Library",
     "browser": "dist/umd/index.js",
     "main": "dist/cjs/index.js",
     "module": "dist/esm/index.js",
@@ -24,14 +24,14 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/geometryzen/stemcstudio-my-lib.git"
+        "url": "git+https://github.com/geometryzen/my-lib.git"
     },
     "author": "David Geo Holmes",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/geometryzen/stemcstudio-my-lib/issues"
+        "url": "https://github.com/geometryzen/my-lib/issues"
     },
-    "homepage": "https://github.com/geometryzen/stemcstudio-my-lib#readme",
+    "homepage": "https://github.com/geometryzen/my-lib#readme",
     "devDependencies": {
         "@istanbuljs/nyc-config-typescript": "^1.0.2",
         "@rollup/plugin-commonjs": "^22.0.2",
