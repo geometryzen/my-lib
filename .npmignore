@@ -1,3 +1,5 @@
+CODE_OF_CONDUCT.md
+CONTRIBUTING.md
 coverage/
 docs/
 src/
@@ -7,6 +9,7 @@ types/
 .eslintrc
 .mocharc.json
 .nycrc.json
+jest.config.js
 register.js
 rollup.config.js
 tsconfig.json
