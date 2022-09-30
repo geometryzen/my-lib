@@ -1,4 +1,4 @@
-# my-lib is a TypeScript Library template
+# my-lib
 
 [![version](https://img.shields.io/npm/v/@geometryzen/my-lib.svg)](https://www.npmjs.com/package/@geometryzen/my-lib) 
 
