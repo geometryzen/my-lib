@@ -1,12 +1,12 @@
 {
     "compilerOptions": {
         "target": "es2022",
-        "module": "es6",
+        "module": "system",
         "moduleResolution": "node",
         "declaration": false,
         "emitDeclarationOnly": false,
         "sourceMap": true,
-        "outDir": "dist/esm",
+        "outDir": "dist/system",
         "esModuleInterop": true,
         "forceConsistentCasingInFileNames": true,
         "strict": true,

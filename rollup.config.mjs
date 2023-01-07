@@ -1,9 +1,9 @@
 /* eslint-disable no-undef */
 /* eslint-disable @typescript-eslint/no-var-requires */
-import commonjs from '@rollup/plugin-commonjs';
+// import commonjs from '@rollup/plugin-commonjs';
 import resolve from '@rollup/plugin-node-resolve';
-import typescript from '@rollup/plugin-typescript';
-import dts from 'rollup-plugin-dts';
+// import typescript from '@rollup/plugin-typescript';
+// import dts from 'rollup-plugin-dts';
 import external from 'rollup-plugin-peer-deps-external';
 import { terser } from 'rollup-plugin-terser';
 import pkg from './package.json' assert { type: 'json' };
@@ -23,15 +23,56 @@ const banner = `/**
  */
 const options =
 {
-    input: 'src/index.ts',
+    input: {
+        'index': 'dist/esm/index.js',
+        'a/index': 'dist/esm/a/index.js',
+        'b/index': 'dist/esm/b/index.js',
+        'shared/index': 'dist/esm/shared/index.js'
+    },
     output: [
         {
             banner,
-            file: './dist/umd/index.js',
+            dir: './dist/esm-bundle',
+            format: 'esm',
+            sourcemap: true
+        },
+        {
+            banner,
+            dir: './dist/esm-bundle-min',
+            format: 'esm',
+            sourcemap: true,
+            plugins: [terser()]
+        },
+        {
+            banner,
+            dir: './dist/system-bundle',
+            format: 'system',
+            sourcemap: true
+        },
+        {
+            banner,
+            dir: './dist/system-bundle-min',
+            format: 'system',
+            sourcemap: true,
+            plugins: [terser()]
+        },
+        {
+            banner,
+            dir: './dist/main',
+            format: 'cjs',
+            sourcemap: true,
+            name: 'MYLIB'
+        },
+        /*
+        {
+            banner,
+            dir: './dist/umd',
             format: 'umd',
             sourcemap: true,
             name: "MYLIB",
         },
+        */
+        /*
         {
             banner,
             file: './dist/umd/index.min.js',
@@ -62,31 +103,28 @@ const options =
         },
         {
             banner,
-            file: './dist/system/index.js',
-            format: 'system',
-            sourcemap: true
-        },
-        {
-            banner,
             file: './dist/system/index.min.js',
             format: 'system',
             sourcemap: true,
             plugins: [terser()]
         }
+        */
     ],
     plugins: [
         external(),
         resolve(),
-        commonjs(),
-        typescript({ tsconfig: './tsconfig.json' })
+        // commonjs(),
+        // typescript({ tsconfig: './tsconfig.json' })
     ]
 };
 
 export default [
     options,
+    /*
     {
         input: 'dist/esm/types/src/index.d.ts',
         output: [{ file: pkg.types, format: "esm" }],
         plugins: [dts()],
     }
+    */
 ];
