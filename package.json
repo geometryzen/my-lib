@@ -1,37 +1,22 @@
 {
     "name": "@geometryzen/my-lib",
-    "version": "0.9.0",
+    "version": "0.9.1",
     "description": "My Library",
-    "main": "dist/cjs/index.js",
-    "module": "dist/esm/index.js",
-    "types": "dist/index.d.ts",
+    "module": "./es2015/index.js",
+    "types": "./types/index.d.ts",
     "exports": {
         ".": {
-            "types": "./dist/index.d.ts",
-            "require": "./dist/cjs/index.js",
-            "system": "./dist/system/index.js",
-            "import": "./dist/esm/index.js"
+            "types": "./types/index.d.ts",
+            "system": "./system/index.js",
+            "import": "./es2015/index.js"
         }
     },
     "files": [
-        "LICENSE",
-        "README.md",
-        "dist/cjs/index.js",
-        "dist/cjs/index.js.map",
-        "dist/esm/index.js",
-        "dist/esm/index.js.map",
-        "dist/esm/index.min.js",
-        "dist/esm/index.min.js.map",
-        "dist/index.d.ts",
-        "dist/system/index.js",
-        "dist/system/index.js.map",
-        "dist/system/index.min.js",
-        "dist/system/index.min.js.map",
-        "dist/umd/index.js",
-        "dist/umd/index.js.map",
-        "dist/umd/index.min.js",
-        "dist/umd/index.min.js.map",
-        "package.json"
+        "es2015/index.js",
+        "es2015/index.js.map",
+        "types/index.d.ts",
+        "system/index.js",
+        "system/index.js.map"
     ],
     "keywords": [
         "my",
@@ -41,9 +26,9 @@
         "access": "public"
     },
     "scripts": {
-        "build": "npm run clean && tsc -p ./tsconfig.types.json && tsc -p ./tsconfig.json && tsc -p ./tsconfig.system.json && rollup -c",
+        "build": "npm run clean && tsc -p ./tsconfig.types.json && tsc -p ./tsconfig.json && rollup -c",
         "check": "npx package-check",
-        "clean": "rm -rf coverage && rm -rf dist && rm -rf docs && rm -rf types && rm -rf build",
+        "clean": "rm -rf coverage && rm -rf dist && rm -rf docs && rm -rf es2015 && rm -rf system && rm -rf types && rm -rf build",
         "coverage": "npm run test -- --coverage",
         "dev": "rollup -c -w",
         "docs": "npm run docs:typedoc && open-cli docs/index.html",
@@ -70,8 +55,8 @@
         "@rollup/plugin-typescript": "^11.0.0",
         "@skypack/package-check": "^0.2.2",
         "@types/jest": "^29.2.5",
-        "@typescript-eslint/eslint-plugin": "^5.48.0",
-        "@typescript-eslint/parser": "^5.48.0",
+        "@typescript-eslint/eslint-plugin": "^5.48.1",
+        "@typescript-eslint/parser": "^5.48.1",
         "eslint": "^8.31.0",
         "gh-pages": "^4.0.0",
         "jest": "^29.3.1",

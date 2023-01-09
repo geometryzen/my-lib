@@ -1,12 +1,12 @@
 {
     "compilerOptions": {
         "target": "es2022",
-        "module": "es6",
+        "module": "es2015",
         "moduleResolution": "node",
         "declaration": true,
         "emitDeclarationOnly": true,
         "sourceMap": true,
-        "declarationDir": "dist/types",
+        "declarationDir": "types",
         "esModuleInterop": true,
         "forceConsistentCasingInFileNames": true,
         "strict": true,

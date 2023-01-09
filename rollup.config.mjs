@@ -1,22 +1,6 @@
-/* eslint-disable no-undef */
-/* eslint-disable @typescript-eslint/no-var-requires */
-// import commonjs from '@rollup/plugin-commonjs';
 import resolve from '@rollup/plugin-node-resolve';
-// import typescript from '@rollup/plugin-typescript';
-// import dts from 'rollup-plugin-dts';
 import external from 'rollup-plugin-peer-deps-external';
 import { terser } from 'rollup-plugin-terser';
-import pkg from './package.json' assert { type: 'json' };
-
-/**
- * Comment with library information to be appended in the generated bundles.
- */
-const banner = `/**
- * ${pkg.name} ${pkg.version}
- * (c) ${pkg.author}
- * Released under the ${pkg.license} License.
- */
-`.trim();
 
 /**
  * @type {import('rollup').RollupOptions}
@@ -24,107 +8,22 @@ const banner = `/**
 const options =
 {
     input: {
-        'index': 'dist/esm/index.js',
-        'a/index': 'dist/esm/a/index.js',
-        'b/index': 'dist/esm/b/index.js',
-        'shared/index': 'dist/esm/shared/index.js'
+        'index': './es2015/index.js'
     },
     output: [
         {
-            banner,
-            dir: './dist/esm-bundle',
-            format: 'esm',
-            sourcemap: true
-        },
-        {
-            banner,
-            dir: './dist/esm-bundle-min',
-            format: 'esm',
-            sourcemap: true,
-            plugins: [terser()]
-        },
-        {
-            banner,
-            dir: './dist/system-bundle',
-            format: 'system',
-            sourcemap: true
-        },
-        {
-            banner,
-            dir: './dist/system-bundle-min',
-            format: 'system',
-            sourcemap: true,
-            plugins: [terser()]
-        },
-        {
-            banner,
-            dir: './dist/main',
-            format: 'cjs',
-            sourcemap: true,
-            name: 'MYLIB'
-        },
-        /*
-        {
-            banner,
-            dir: './dist/umd',
-            format: 'umd',
-            sourcemap: true,
-            name: "MYLIB",
-        },
-        */
-        /*
-        {
-            banner,
-            file: './dist/umd/index.min.js',
-            format: 'umd',
-            sourcemap: true,
-            name: "MYLIB",
-            plugins: [terser()]
-        },
-        {
-            banner,
-            file: pkg.main,
-            format: 'cjs',
-            sourcemap: true,
-            name: 'MYLIB'
-        },
-        {
-            banner,
-            file: './dist/esm/index.js',
-            format: 'esm',
-            sourcemap: true
-        },
-        {
-            banner,
-            file: './dist/esm/index.min.js',
-            format: 'esm',
-            sourcemap: true,
-            plugins: [terser()]
-        },
-        {
-            banner,
-            file: './dist/system/index.min.js',
+            dir: './system',
             format: 'system',
             sourcemap: true,
             plugins: [terser()]
         }
-        */
     ],
     plugins: [
         external(),
-        resolve(),
-        // commonjs(),
-        // typescript({ tsconfig: './tsconfig.json' })
+        resolve()
     ]
 };
 
 export default [
-    options,
-    /*
-    {
-        input: 'dist/esm/types/src/index.d.ts',
-        output: [{ file: pkg.types, format: "esm" }],
-        plugins: [dts()],
-    }
-    */
+    options
 ];
