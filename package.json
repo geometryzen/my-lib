@@ -12,11 +12,11 @@
     "module": "./dist/esm/index.min.js",
     "types": "./dist/index.d.ts",
     "files": [
-        "es2015/src/index.js",
-        "es2015/src/index.js.map",
-        "types/index.d.ts",
-        "system/index.js",
-        "system/index.js.map"
+        "dist/esm/index.min.js",
+        "dist/esm/index.min.js.map",
+        "dist/index.d.ts",
+        "dist/system/index.min.js",
+        "dist/system/index.min.js.map"
     ],
     "keywords": [
         "my",
