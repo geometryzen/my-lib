@@ -9,8 +9,6 @@
             "default": "./dist/esm/index.min.js"
         }
     },
-    "module": "./dist/esm/index.min.js",
-    "types": "./dist/index.d.ts",
     "files": [
         "dist/esm/index.min.js",
         "dist/esm/index.min.js.map",

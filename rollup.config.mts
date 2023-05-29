@@ -57,9 +57,10 @@ const options: RollupOptions[] = [
             typescript({ tsconfig: './tsconfig.json' })
         ]
     },
+    // Bundle the generated ESM type definitions.
     {
         input: './dist/esm/types/src/index.d.ts',
-        output: [{ file: pkg.types, format: "esm" }],
+        output: [{ file: './dist/index.d.ts', format: "esm" }],
         plugins: [dts()],
     }
 ];
