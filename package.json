@@ -9,6 +9,9 @@
             "default": "./dist/esm/index.min.js"
         }
     },
+    "module": "./dist/esm/index.min.js",
+    "types": "./dist/index.d.ts",
+    "type": "module",
     "files": [
         "dist/esm/index.min.js",
         "dist/esm/index.min.js.map",
@@ -53,14 +56,14 @@
     "homepage": "https://github.com/geometryzen/my-lib#readme",
     "devDependencies": {
         "@rollup/plugin-commonjs": "^25.0.0",
-        "@rollup/plugin-node-resolve": "^15.0.2",
+        "@rollup/plugin-node-resolve": "^15.1.0",
         "@rollup/plugin-terser": "^0.4.3",
         "@rollup/plugin-typescript": "^11.1.1",
         "@skypack/package-check": "^0.2.2",
         "@types/jest": "^29.5.1",
         "@types/rollup-plugin-peer-deps-external": "^2.2.1",
-        "@typescript-eslint/eslint-plugin": "^5.59.7",
-        "@typescript-eslint/parser": "^5.59.7",
+        "@typescript-eslint/eslint-plugin": "^5.59.8",
+        "@typescript-eslint/parser": "^5.59.8",
         "eslint": "^8.41.0",
         "gh-pages": "^5.0.0",
         "jest": "^29.5.0",
