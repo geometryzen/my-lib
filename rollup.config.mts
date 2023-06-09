@@ -47,7 +47,8 @@ const options: RollupOptions[] = [
             {
                 banner,
                 file: './dist/commonjs/index.js',
-                format: 'commonjs'
+                format: 'commonjs',
+                sourcemap: true
             },
         ],
         plugins: [
