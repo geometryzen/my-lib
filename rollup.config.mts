@@ -4,15 +4,16 @@ import terser from '@rollup/plugin-terser';
 import typescript from '@rollup/plugin-typescript';
 import { RollupOptions } from 'rollup';
 import dts from 'rollup-plugin-dts';
-import pkg from './package.json' assert { type: 'json' };
+import peer_deps_external from 'rollup-plugin-peer-deps-external';
+import package_json from './package.json' assert { type: 'json' };
 
 /**
 * Comment with library information to be appended in the generated bundles.
 */
 const banner = `/**
-* ${pkg.name} ${pkg.version}
-* (c) ${pkg.author.name} ${pkg.author.email}
-* Released under the ${pkg.license} License.
+* ${package_json.name} ${package_json.version}
+* (c) ${package_json.author.name} ${package_json.author.email}
+* Released under the ${package_json.license} License.
 */
 `.trim();
 
@@ -27,7 +28,7 @@ const options: RollupOptions[] = [
                 sourcemap: true
             },
             {
-                file: './dist/esm/index.min.js',
+                file: package_json.module,
                 format: 'esm',
                 sourcemap: true,
                 plugins: [terser()]
@@ -39,14 +40,14 @@ const options: RollupOptions[] = [
                 sourcemap: true
             },
             {
-                file: './dist/system/index.min.js',
+                file: package_json.exports['.'].system,
                 format: 'system',
                 sourcemap: true,
                 plugins: [terser()]
             },
             {
                 banner,
-                file: './dist/commonjs/index.js',
+                file: package_json.main,
                 format: 'commonjs',
                 sourcemap: true
             },
@@ -54,14 +55,15 @@ const options: RollupOptions[] = [
         plugins: [
             // Allows us to consume libraries that are CommonJS.
             commonjs(),
+            peer_deps_external() as Plugin,
             resolve(),
-            typescript({ tsconfig: './tsconfig.json' })
+            typescript({ tsconfig: './tsconfig.json', exclude: ['**/*.spec.ts'] })
         ]
     },
     // Bundle the generated ESM type definitions.
     {
         input: './dist/esm/types/src/index.d.ts',
-        output: [{ file: './dist/index.d.ts', format: "esm" }],
+        output: [{ file: package_json.types, format: "esm" }],
         plugins: [dts()]
     }
 ];

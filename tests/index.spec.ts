@@ -1,5 +1,5 @@
 import { greeting } from "../src/index";
 
-test("greeting the World", function () {
+test("index", function () {
     expect(greeting("World")).toBe("Hello, World!");
 });

@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-        "target": "es2022",
+        "target": "esnext",
         "module": "esnext",
         "moduleResolution": "node",
         "declaration": true,
@@ -23,6 +23,10 @@
     },
     "include": [
         "./src/**/*.ts",
-        "rollup.config.mts"
+        "./rollup.config.mts",
+        "./rollup-plugin-dts.d.ts"
+    ],
+    "exclude": [
+        "node_modules"
     ]
 }
