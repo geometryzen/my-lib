@@ -51,6 +51,12 @@ const options: RollupOptions[] = [
                 format: 'commonjs',
                 sourcemap: true
             },
+            {
+                file: package_json.browser,
+                format: 'umd',
+                name: 'MYLIB',
+                sourcemap: true
+            }
         ],
         plugins: [
             // Allows us to consume libraries that are CommonJS.
