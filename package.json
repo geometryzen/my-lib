@@ -1,17 +1,22 @@
 {
     "name": "@geometryzen/my-lib",
-    "version": "0.9.10",
+    "version": "0.9.11",
     "description": "Template TypeScript Library",
     "exports": {
-        ".": {
+        "default": {
             "types": "./dist/index.d.ts",
             "system": "./dist/system/index.min.js",
-            "default": "./dist/commonjs/index.js"
+            "default": "./dist/esm/index.min.js"
+        },
+        "node": {
+            "module": "./dist/esm/index.js",
+            "require": "./dist/commonjs/index.js"
         }
     },
     "browser": "./dist/umd/index.js",
     "main": "./dist/commonjs/index.js",
     "module": "./dist/esm/index.min.js",
+    "type": "module",
     "types": "./dist/index.d.ts",
     "files": [
         "dist/commonjs/index.js",

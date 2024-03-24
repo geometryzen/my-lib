@@ -5,15 +5,19 @@ import typescript from '@rollup/plugin-typescript';
 import { RollupOptions } from 'rollup';
 import dts from 'rollup-plugin-dts';
 import peer_deps_external from 'rollup-plugin-peer-deps-external';
-import package_json from './package.json' assert { type: 'json' };
+import pkg from './package.json' assert { type: 'json' };
+
+function non_minified_file(path: string): string {
+    return path.replace(".min.js", ".js");
+}
 
 /**
 * Comment with library information to be appended in the generated bundles.
 */
 const banner = `/**
-* ${package_json.name} ${package_json.version}
-* (c) ${package_json.author.name} ${package_json.author.email}
-* Released under the ${package_json.license} License.
+* ${pkg.name} ${pkg.version}
+* (c) ${pkg.author.name} ${pkg.author.email}
+* Released under the ${pkg.license} License.
 */
 `.trim();
 
@@ -23,36 +27,36 @@ const options: RollupOptions[] = [
         output: [
             {
                 banner,
-                file: './dist/esm/index.js',
+                file: non_minified_file(pkg.exports.default.default),
                 format: 'esm',
                 sourcemap: true
             },
             {
-                file: package_json.module,
+                file: pkg.exports.default.default,
                 format: 'esm',
                 sourcemap: true,
                 plugins: [terser()]
             },
             {
                 banner,
-                file: './dist/system/index.js',
+                file: non_minified_file(pkg.exports.default.system),
                 format: 'system',
                 sourcemap: true
             },
             {
-                file: package_json.exports['.'].system,
+                file: pkg.exports.default.system,
                 format: 'system',
                 sourcemap: true,
                 plugins: [terser()]
             },
             {
                 banner,
-                file: package_json.main,
+                file: pkg.exports.node.require,
                 format: 'commonjs',
                 sourcemap: true
             },
             {
-                file: package_json.browser,
+                file: pkg.browser,
                 format: 'umd',
                 name: 'MYLIB',
                 sourcemap: true
@@ -69,7 +73,7 @@ const options: RollupOptions[] = [
     // Bundle the generated ESM type definitions.
     {
         input: './dist/esm/types/src/index.d.ts',
-        output: [{ file: package_json.types, format: "esm" }],
+        output: [{ file: pkg.types, format: "esm" }],
         plugins: [dts()]
     }
 ];
