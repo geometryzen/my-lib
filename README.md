@@ -1,6 +1,6 @@
 # my-lib
 
-Template TypeScript Library
+My TypeScript Library Template
 
 [![version](https://img.shields.io/npm/v/@geometryzen/my-lib.svg)](https://www.npmjs.com/package/@geometryzen/my-lib) 
 
