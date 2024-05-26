@@ -1,8 +1,9 @@
 #!/bin/sh
-npm install --force
-npm update --force
-npm run build
+npm install
+npm update
 npm run lint
+npm run build
+npm run test
 git status
 git add --all
 echo "Please enter a commit message"
