@@ -1,6 +1,7 @@
 #!/bin/sh
 npm install
 npm update
+npm run format:write
 npm run lint
 npm run build
 npm run test
