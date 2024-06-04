@@ -9,3 +9,6 @@ My TypeScript Library Template
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
 
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](./CONTRIBUTING.md)
+
+For a STEMCstudio example (click [here](https://www.stemcstudio.com/gists/cbfe438dfe3c91b6e81a4d4a8358545c) to try)
+

@@ -1,12 +1,13 @@
 import eslintJs from "@eslint/js";
 import typescriptEslint from "@typescript-eslint/eslint-plugin";
 import typescriptParser from "@typescript-eslint/parser";
+import eslintConfigPrettier from "eslint-config-prettier";
 import globals from "globals";
 import eslintTs from "typescript-eslint";
 
 export default [
     {
-        ignores: ["build/**", "coverage/**", "dist/**", "docs/**", "node_modules/**", "types/**"]
+        ignores: ["build/**", "coverage/**", "dist/**", "docs/**", "node_modules/**", "types/**", "www/**"]
     },
     {
         files: ["**/*.ts"],
@@ -27,5 +28,6 @@ export default [
         }
     },
     eslintJs.configs.recommended,
-    ...eslintTs.configs.recommended
+    ...eslintTs.configs.recommended,
+    eslintConfigPrettier
 ];
