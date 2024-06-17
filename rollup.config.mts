@@ -51,7 +51,7 @@ const options: RollupOptions[] = [
             },
             {
                 banner,
-                file: pkg.main,
+                file: pkg.exports['.'].require,
                 format: 'commonjs',
                 sourcemap: true
             },
