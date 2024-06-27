@@ -75,8 +75,8 @@
         "@skypack/package-check": "^0.2.2",
         "@types/jest": "^29.5.12",
         "@types/rollup-plugin-peer-deps-external": "^2.2.5",
-        "@typescript-eslint/eslint-plugin": "^7.13.1",
-        "@typescript-eslint/parser": "^7.13.1",
+        "@typescript-eslint/eslint-plugin": "^7.14.1",
+        "@typescript-eslint/parser": "^7.14.1",
         "eslint": "^8.57.0",
         "eslint-config-prettier": "^9.1.0",
         "gh-pages": "^6.1.1",
@@ -91,8 +91,8 @@
         "ts-jest-resolver": "^2.0.1",
         "ts-node": "^10.9.2",
         "tslib": "^2.6.3",
-        "typedoc": "^0.26.0",
+        "typedoc": "^0.26.2",
         "typescript": "^5.5.2",
-        "typescript-eslint": "^7.13.1"
+        "typescript-eslint": "^7.14.1"
     }
 }
