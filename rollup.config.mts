@@ -5,7 +5,7 @@ import typescript from '@rollup/plugin-typescript';
 import { RollupOptions } from 'rollup';
 import dts from 'rollup-plugin-dts';
 import peer_deps_external from 'rollup-plugin-peer-deps-external';
-import pkg from './package.json' assert { type: 'json' };
+import pkg from './package.json' with { type: 'json' };
 
 function non_minified_file(path: string): string {
     return path.replace(".min.js", ".js");
@@ -72,7 +72,7 @@ const options: RollupOptions[] = [
     },
     // Bundle the generated ESM type definitions.
     {
-        input: './dist/esm/types/src/index.d.ts',
+        input: './dist/src/index.d.ts',
         output: [{ file: pkg.types, format: "esm" }],
         plugins: [dts()]
     }
